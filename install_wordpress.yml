@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+  roles:
+    - makarenalabs.wordpress
+  vars_files:
+    - vars/wordpress.yml
+
+  tasks:
+    - name: enable proxy_fcgi
+      community.general.apache2_module:
+        state: present
+        name: proxy_fcgi
+      notify: restart apache2
+
+    - name: enable php7.4-fpm.conf
+      command: "a2enconf php7.4-fpm.conf"
+      notify: restart apache2
+
+
+  handlers:
+  - name: restart apache2
+    systemd:
+      state: restarted
+      name: apache2
+      enabled: yes
+
+

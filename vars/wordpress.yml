@@ -1,0 +1,8 @@
+wp_version: 6.0.1
+wp_mysql_db: 'orcid_web'
+wp_mysql_user: 'orcid_web'
+wp_mysql_password: 'orcid_web'
+wp_webserver: apache2
+wp_sitename: orcid.library.yorku.ca
+wp_admin_email: 'admin@orcid.library.yorku.ca'
+wp_install_dir: "/var/www/{{ wp_sitename }}/web"

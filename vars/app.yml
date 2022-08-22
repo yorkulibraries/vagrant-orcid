@@ -1,0 +1,8 @@
+app: orcid
+app_domain: library.yorku.ca
+puma_port: 3001
+ruby_version: 2.6.9
+rails_env: development
+repo_branch: master 
+repo: https://github.com/yorkulibraries/orcid.git
+extra_apache_conf: true
